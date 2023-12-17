@@ -55,10 +55,10 @@ class TestBurger:
         assert burger.ingredients[0].get_name() == "tomato"
 
     def test_remove_ingredient(self, burger):
-        assert len(burger.ingredients) == 2
+        count_ingredients = len(burger.ingredients)
         burger.remove_ingredient(0)
 
-        assert len(burger.ingredients) == 1
+        assert (count_ingredients - len(burger.ingredients)) == 1
 
     def test_move_ingredient(self, burger):
         nod = burger.ingredients[1]
